@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+    <body>
+        <section>
+            <form>
+                <h1>Login</h1>
+                <div class="inputbox">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="text" class="txtbox1" id="uname" required>
+                    <label for="uname">Username</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password"  class="txtbox2" id="pword" required><br>
+                    <label for="pword">Password</label>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox">Remember Me</label>
+                  <a href="#">Forget Password</a>
+                </div>
+
+                <input type="submit" class="button" onclick="login(event)"></br> </br>
+                <input type ="submit" class ="button" value ="Clear" onclick ="clear(event)">
+
+
+                <div class="register">
+                    <p>Don't have a account <a href="#">Register</a></p>
+                </div>
+            </form>
+
+        </section>
+
+        <div class="check" id="check">
+            <img src="sign/pch.png" class="tick">
+            <h2>My Lover</h2>
+            <p id="checkoutput"></p>
+            <button type="button" onclick="closePopup()">OK</button>
+        </div>
+        <div class="again" id="again">
+            <img src="sign/x.png" class="x">
+            <h2>Begin Again</h2>
+            <p id="againoutput"></p>
+            <button type="button" onclick="closePopup2()" id="againbutton"></button>
+        </div>
+        <div class="reset" id="reset">
+            <img src="sign/x2.png" class="x2">
+            <h2>This is me trying</h2>
+            <p id="resetoutput"></p>
+            <button type="button" onclick="closePopup3()">OK</button>
+        </div>
+
+        <audio id="lover">
+            <source src="music/lover.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="red">
+            <source src="music/red.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <audio id="folklore">
+            <source src="music/folklore.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+
+        <script src="scripts.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+
+</html>
