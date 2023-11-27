@@ -1,5 +1,11 @@
+var username = document.getElementById("uname").value;
+var password = document.getElementById("pword").value;
+
 let responselimit = 0;
 let countdown = 4;
+
+let btnPopup = document.getElementById('loginform');
+
 let check = document.getElementById('check');
 let again = document.getElementById('again');
 let reset = document.getElementById('reset');
@@ -8,10 +14,17 @@ let againoutput =  document.getElementById('againoutput');
     let againbutton = document.getElementById('againbutton');
 let resetoutput = document.getElementById('resetoutput');
 
+
+
 let lover = document.getElementById("lover");
 let red = document.getElementById("red");
 let folklore = document.getElementById("folklore");
 
+function loginpopup(event){
+    event.preventDefault();
+    btnPopup.classList.add("active-loginform");
+
+}
 
 function login(event) {
     event.preventDefault();
@@ -56,10 +69,12 @@ function login(event) {
 
 function clear(event){
     event.preventDefault();
-    var username = document.getElementById("uname").value = "";
-    var password = document.getElementById("pword").value = "";
-    document.getElementById('output').innerHTML = " ";
-    document.getElementById('output').value = " ";
+    btnPopup.classList.add("active-loginform");
+
+    username = document.getElementById("uname").value = " ";
+    password = document.getElementById("pword").value = " ";
+
+    return false;
 }
 
 function closePopup(){  
