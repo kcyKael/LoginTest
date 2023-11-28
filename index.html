@@ -9,13 +9,15 @@
 </head>
 
     <body>
+        <!-- Background Cloud Design -->
         <div class="container">
             <div class="cloud"> 
             </div>
         </div>
 
+        <!-- Top Navigation Bar -->
         <header>
-            <h2 class="logo">Swifties Lounge</h2>
+            <h2 class="logo" onClick="window.location.reload();">Swifties Lounge</h2>
             <nav class="navigation">
                 <a href="#">Home</a>
                 <a href="#">About</a>
@@ -26,10 +28,12 @@
         </header>
 
         
-
+        <!-- Login Form -->
         <div class="loginform" id="loginform">
             <form>
-                <h1>Login</h1>
+                <span class="icon-close" id="form-close" onclick="loginpopupclose(event)"><ion-icon name ="close"></ion-icon></span>
+                <h1><img src="album/swifties.png" class="logoimg"></h1>
+                
                 <div class="inputbox">
                     <ion-icon name="mail-outline"></ion-icon>
                     <input type="text" class="txtbox1" id="uname" required>
@@ -41,7 +45,10 @@
                     <label for="pword">Password</label>
                 </div>
                 <div class="forget">
-                    <label for=""><input type="checkbox">Remember Me</label>
+                    <div class="remember">
+                        <input type="checkbox" name="cb" id="cb-47" />
+                        <label for="cb-47">Remember Me</label>
+                      </div>
                   <a href="#">Forget Password</a>
                 </div>
 
@@ -54,6 +61,7 @@
 
         </div>
 
+         <!-- Pop-Ups -->
         <div class="check" id="check">
             <img src="sign/pch.png" class="tick">
             <h2>My Lover</h2>
@@ -63,7 +71,7 @@
         <div class="again" id="again">
             <img src="sign/x.png" class="x">
             <h2>Begin Again</h2>
-            <p id="againoutput"></p>
+            <p id="againoutput"></p>    
             <button type="button" onclick="closePopup2()" id="againbutton"></button>
         </div>
         <div class="reset" id="reset">
@@ -73,23 +81,45 @@
             <button type="button" onclick="closePopup3()">OK</button>
         </div>
 
+        <!-- Music Files -->
+        <audio id="enchanted">
+            <source src="music/enchanted.MP3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
         <audio id="lover">
-            <source src="music/lover.mp3" type="audio/mpeg">
+            <source src="music/lover.MP3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
         <audio id="red">
-            <source src="music/red.mp3" type="audio/mpeg">
+            <source src="music/red.MP3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-
         <audio id="folklore">
-            <source src="music/folklore.mp3" type="audio/mpeg">
+            <source src="music/folklore.MP3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
 
+        <!-- Lyrics -->
+        <div class="lyrics" id="lyrics" onclick="lyrics()">
+            <h3>
+                <span>I</span>
+                <span>was</span>
+                <span>enchanted</span>
+                <span>to</span>
+                <span>meet</span>
+                <span>you.</span>
+            </h3>
+            <h5>
+                <span>-</span>
+                <span>Enchanted</span>
+                <span>(Taylor's Version)</span>
+
+            </h5>
+        </div>
         
 
         <script src="scripts.js"></script>
+        <!-- Script for icons -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>

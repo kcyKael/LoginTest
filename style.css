@@ -29,6 +29,10 @@ header {
   user-select: none;
 }
 
+.logo:hover{
+  cursor: pointer;
+}
+
 .navigation a{
   position: relative;
   font-size: 1.1em;
@@ -80,6 +84,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   min-height: 100vh;
   background-image: linear-gradient(to bottom, #B0A2AE, #ECB3AD, #E1A6AF, #95ABCC, #C9ADBF);
   background-repeat: no-repeat;
@@ -120,13 +125,15 @@ body {
 }
 
 
+
 .loginform{
-    position: relative;
+    z-index: 100;
+    position: absolute;
     max-width: 400px;
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    backdrop-filter: blur(55px);
+    backdrop-filter: blur(20px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,6 +141,23 @@ body {
     transform: scale(0.1);
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
+    overflow: hidden;
+}
+.loginform .icon-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 2em;
+  color: rgba(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .active-loginform{
@@ -146,6 +170,44 @@ h1 {
     font-size: 2rem;
     color: #fff;
     text-align: center;
+}
+h1 img{
+  width: 300px;
+  margin-bottom: -45px;
+}
+
+.lyrics{
+  z-index: 0;
+}
+
+.lyrics:hover{
+  cursor: pointer;
+}
+
+h3 {
+  font-family: "Montserrat Medium";
+  font-size: 100px;
+  color: white;
+  max-width: 40ch;
+  text-align: left;
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  opacity: 0.5;
+
+
+}
+
+h5 {
+  font-family: "Montserrat Medium";
+  font-size: 50px;
+  color: white;
+  max-width: 40ch;
+  text-align: right;
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  opacity: 0.5;
+  margin-top: -30px;
+  margin-left: 350px;
 }
 
 .inputbox {
@@ -163,7 +225,7 @@ h1 {
     color: #fff;
     font-size: 1rem;
     pointer-events: none;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 
 input:focus ~ label, 
@@ -191,7 +253,7 @@ input:valid ~ label {
 }
 
 .forget {
-    margin: 35px 0;
+    margin: 50px 0;
     font-size: 0.85rem;
     color: #fff;
     display: flex;
@@ -253,7 +315,9 @@ input:valid ~ label {
 }
 
 .check {
-    width: 400px;
+    z-index: 101;
+    width: 380px;
+    border: 2px solid white;
     background-image: url("album/lover.jpg");
     background-size: cover;
     background-color: rgba(0, 0, 0, 1);
@@ -311,7 +375,7 @@ input:valid ~ label {
     text-shadow: 0 0 10px #721e40;
   }
   .check button{
-    width: 100%;
+    width: 300px;
     margin-top: 50px;
     padding: 10px 0;
     background: #e54798;
@@ -326,10 +390,11 @@ input:valid ~ label {
   }
   
   .again {
-    width: 400px;
+    z-index: 101;
+    width: 380px;
     background-image: url("album/red.jpg");
     background-size: cover;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 1;
@@ -340,13 +405,14 @@ input:valid ~ label {
     transform: translate(-50%, -50%) scale(0.1);
     text-align: center;
     padding: 0 30px 30px;
-    color:#333;
+    color: #333;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
-  
+    border: 2px solid white;
   
   } 
-  
+
+
   .open-again{
     visibility: visible;
     top: 45%;
@@ -384,7 +450,7 @@ input:valid ~ label {
     text-shadow: -1px 2px 1px #721e40;
   }
   .again button{
-    width: 100%;
+    width: 300px;
     margin-top: 50px;
     padding: 10px 0;
     background: #b41e28;
@@ -392,14 +458,16 @@ input:valid ~ label {
     border: 0;
     outline: none;
     font-size: 18px;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   
   }
   
   .reset {
-    width: 400px;
+    z-index: 101;
+    width: 380px;
+    border: 2px solid white;
     background-image: url("album/folklore.jpeg");
     background-size: cover;
     background-color: rgba(0, 0, 0, 1);
@@ -457,7 +525,7 @@ input:valid ~ label {
     text-shadow: -1px 2px 2px #000;
   }
   .reset button{
-    width: 100%;
+    width: 300px;
     margin-top: 50px;
     padding: 10px 0;
     background: #6f6f6f;
@@ -470,3 +538,94 @@ input:valid ~ label {
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   
   }
+
+  .remember input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+  }
+
+  .remember label {
+    position: relative;
+    padding-left: 2em;
+    padding-right: 1em;
+    line-height: 2;
+    cursor: pointer;
+    display: inline-flex;
+  }
+
+  .remember label:before {
+    box-sizing: border-box;
+    content: " ";
+    position: absolute;
+    top: 0.3em;
+    left: 0;
+    display: block;
+    width: 1.4em;
+    height: 1.4em;
+    border: 2px solid white;
+    border-radius: 6px;
+    z-index: -1;
+  }
+
+  .remember input[type=checkbox]:checked + label {
+    padding-left: 1em;
+    color: white;
+   
+  }
+  .remember input[type=checkbox]:checked + label:before {
+    top: 0;
+    width: 100%;
+    height: 2em;
+    background-color: transparent;
+    border-color: white;
+    backdrop-filter: blur(55px);
+  }
+
+  .remember label,
+  .remember label::before {
+    transition: 0.25s all ease;
+  }
+
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(2) {
+  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(3) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(4) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(5) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(6) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
