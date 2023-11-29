@@ -51,7 +51,7 @@ function login(event) {
         /* login logic */
         if (username === "kael" && password === "imy143") {
             check.classList.add("open-check");
-            checkoutput.innerHTML = 'Welcome, Kael.<br> You have logged in succcesfully';
+            checkoutput.innerHTML = 'Welcome, Kael.<br>You have logged in<br>succcesfully';
 
             lover.volume = 0.1;
             lover.play();
@@ -59,7 +59,7 @@ function login(event) {
         }
         else if(username === "jai" && password === "abit123"){
             check.classList.add("open-check");
-            checkoutput.innerHTML = 'Welcome, Jai.<br> You have logged in <br> succcesfully';
+            checkoutput.innerHTML = 'Welcome, Jai.<br> You have logged in<br>succcesfully';
 
             lover.volume = 0.1;
             lover.play();
@@ -74,6 +74,13 @@ function login(event) {
         else if(username === "tan" && password === "12hud"){
             check.classList.add("open-check");
             checkoutput.innerHTML = 'Welcome, Sir Tan.<br>You have logged in<br>succcesfully';
+
+            lover.volume = 0.1;
+            lover.play();
+        }
+        else if(username === "guest" && password === ""){
+            check.classList.add("open-check");
+            checkoutput.innerHTML = 'Welcome, Guest.<br>You have logged in<br>succcesfully';
 
             lover.volume = 0.1;
             lover.play();
